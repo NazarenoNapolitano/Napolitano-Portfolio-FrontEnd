@@ -7,7 +7,7 @@ import { AppRoutingModule, routingComponents } from './app-routing/app-routing.m
 import { Vista1Module } from './vista1/vista1.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, Vista1Module ],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule, Vista1Module],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
