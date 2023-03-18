@@ -8,9 +8,13 @@
   <div class="principal"> 
    <p>Inicio de Sesión</p> 
    <div class="username"> 
+   <label for="email">Correo electrónico:<label>
+   <input type="email" name="email" [(ngModel)="email" required>
     <p>Username</p> 
    </div> 
    <div class="clave"> 
+   <label for="password">Clave:</label>
+   <input type="password" name="password" [(ngModel)]="password" required>
     <p>Clave</p> 
    </div> 
    <div class="boton"> 
