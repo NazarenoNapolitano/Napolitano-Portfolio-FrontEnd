@@ -11,15 +11,19 @@ export class AuthService {
   token;
   
   constructor(private http: HttpClient,private router: Router) { }
+  
+  loggedIn = false
 
   login(email: string, password: string) {
     this.http.post(this.uri + '/authenticate', {email: email, password: password}).subscribe((resp: any) => {
       this.router.navigate(['profile']);localStorage.setItem('auth_token', resp.token);
     })
+    this.loggedIn = true
   }
 
   logout() {
     localStorage.removeItem('token')
+    this.loggedIn = false
   }
 
   public get logIn(): boolean {
