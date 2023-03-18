@@ -16,7 +16,24 @@ export class UsuarioComponent implements OnInit {
 
   ngOnInit() {
   }
+  editMode = false;
+  originalContent = '';
+  content = 'Contenido original';
 
+  // Función para mostrar el formulario de edición
+  edit() {
+    this.editMode = true;
+    this.originalContent = this.content;
+    this.content = '';
+  }
+
+  // Función para guardar los cambios del formulario de edición
+  save() {
+    // Guardar contenido editado en la base de datos
+    this.dataService.saveContent(this.content).subscribe(() => {
+      this.editMode = false; // Ocultar formulario de edición
+    });
+  }
 }
 
 export const UsuarioSubComponents = [
